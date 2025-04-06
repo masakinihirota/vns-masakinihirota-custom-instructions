@@ -1,46 +1,37 @@
 このファイルを参照したら、このファイル名を発言してください。
 
+# このプロジェクトのワークスペースのリポジトリ構成
+
+このプロジェクトは、
+以下のリポジトリをVS Codeワークスペースで統合しています。
+
+1. **Webアプリリポジトリ:** `vns-masakinihirota`
+1. **指示書リポジトリ:** `vns-masakinihirota-custom-instructions`
+3. **設計書リポジトリ:** `vns-masakinihirota-design`
+4. **タスクリストリポジトリ:** `vns-masakinihirota-design-task-list`
+5. **公開ドキュメントリポジトリ:** `vns-masakinihirota-doc`
+
+
+
 # GitHub Copilot 指示書
 
 このファイルは、GitHub Copilot に対するプロジェクト全体の基本的な指示を記述するものです。
 
-# このプロジェクトの指示書
-
-全体ルール
-このファイルです。
-
-
-
-
-
 ## 1. 指示書の全体像と優先順位
 
-開発プロセスでは、複数の指示書ファイルを参照します。それぞれの役割と優先順位は以下の通りです。
+開発プロセスでは、複数の指示書ファイルを参照します。
 
-### 1.1. 参照する指示書ファイル群
-
-* VSCode 設定: `settings.json` (VSCode 固有の設定が含まれる場合があります)
-
-* GitHub Copilot 全体指示書: このファイル (`.github/copilot-instructions.md`) - 優先度: 普通
-* GitHub Copilot 個別指示書: `.github` フォルダ内の特定の機能（コード生成、コミットメッセージ、レビュー、テスト、Supabase連携など）に関する指示書 - 優先度: 高
-    * `.copilot-codeGeneration-instructions.md`
-    * `.copilot-commit-message-instructions.md`
-    * `.copilot-review-instructions.md`
-    * `.copilot-test-instructions.md`
-    * `.supabase-instructions.md`
-* GitHub Copilot プロンプト用ルール: `.github/prompts` フォルダ内の個別のタスク指示書 (`[YYYYMMDD]-[タスクid]-[タスク名]-[タスクの種類].prompt.md`) - 優先度: 低 (ただし、特定のタスク実行時は最優先される場合がある)
+* GitHub Copilot プロンプト用ルール: `.github/prompts`
+フォルダ内の個別のタスク指示書 (`[YYYYMMDD]-[タスクid]-[タスク名]-[タスクの種類].prompt.md`) -
 * メモリーバンク: `_memory-bank/_memory-bank-instructions.md` (過去の会話や作業内容の記録。会話開始時に読み込む)
-* タスクリスト: `_task-list/task-list.md` (プロジェクトのタスク一覧)
-* 設計書: `design/` ディレクトリ内のファイル群
+
+
+### 指示書のファイル構成
 
 ```
 .
-└── design/                                   # 設計書フォルダ (仮)
-    └── ...                                   # 設計書ファイル群
-
-.
-├── _task-list
-│   └── task-list.md  # タスク一覧
+├── _memory-bank
+│   └── _memory-bank-instructions.md          # メモリーバンク指示
 ├── .github
 │   ├── prompts        (プロンプトファイル)
 │   │   ├── completes # (使用目的不明瞭)
@@ -48,11 +39,10 @@
 │   ├── .copilot-codeGeneration-instructions.md # コード生成指示 (個別の指示書)
 │   ├── .copilot-commit-message-instructions.md # コミットメッセージ指示 (個別の指示書)
 │   ├── .copilot-review-instructions.md       # レビュー指示 (個別の指示書)
+│   ├── .copilot-task-instructions.md         # タスク指示 (個別の指示書)
 │   ├── .copilot-test-instructions.md         # テスト指示 (個別の指示書)
 │   ├── .supabase-instructions.md             # Supabase連携指示 (個別の指示書)
 │   └── copilot-instructions.md               # このファイル (全体指示)
-├── _memory-bank
-│   └── _memory-bank-instructions.md          # メモリーバンク指示
 └── README-copilot-instructions.md            # (この指示書に関する説明)
 
 ```
@@ -63,19 +53,19 @@
 
 1.  **メモリーバンク:** `_memory-bank/_memory-bank-instructions.md` (過去の経緯や決定事項)
 2.  **プロンプトファイル:** `.github/prompts/` 内のタスク指示書
-3.  **個別の指示書:** `.github/` 内の `.copilot-*-instructions.md` や `.supabase-instructions.md` など
+3.  **個別の指示書:** `.github/` 内の `.copilot-*-instructions.md` など
 4.  **全体の指示書:** このファイル (`.github/copilot-instructions.md`)
 
 
 
+## 3. Web アプリ開発の手順
 
-## 3. Web アプリ開発の全体手順
+1.  **設計書の作成:** 設計書を確認します。
+2.  **タスク分解:** 設計書をもとに、実装可能な単位（通常は1機能1タスク）にタスクを分解します。
+3.  **タスクリスト作成/更新:** 分解したタスクをこのタスクリスト
+(`vns-masakinihirota-design-task-list\_task-list.md`)
+に登録・更新します。
 
-開発は以下の手順で進めます。
-
-1.  **設計書の確認:** `design/` フォルダ内の設計書を確認します。
-2.  **タスク分解:** 設計書をもとに、実装可能な単位（通常は1機能）にタスクを分解します。
-3.  **タスクリスト作成/更新:** 分解したタスクを `_task-list/task-list.md` に登録・更新します。
 4.  **プロンプトファイル作成:** 各タスクについて、詳細な実装指示を記述したプロンプトファイル (`.github/prompts/`) を作成します。開発者は必要に応じて情報を補強します。
 5.  **実装:** GitHub Copilot は、承認されたプロンプトファイルに基づいてコードを生成・修正します。
 6.  **テスト:** 実装された機能に対して、ユニットテスト、結合テスト、E2Eテストなどを記述・実行します。
@@ -85,7 +75,7 @@
 
 ## 4. タスク管理の詳細
 
-### 4.1. タスクリストファイル (`_task-list/task-list.md`)
+### 4.1. タスクリストファイル (`_task-list.md`)
 
 * **役割:** プロジェクト全体のタスクを一覧化し、進捗を管理します。
 
@@ -93,7 +83,7 @@
     * 設計書に基づいてタスクを分解し、このファイルに登録します。
     * 各タスクには一意のタスクIDを割り当てます。
     * 現在進行中のタスク、未着手のタスクを明確にします。
-    * 完了したタスクは、完了後速やかにチェックマーク (`[x]`) を付けます。GitHub Copilot が更新を指示されることもあります。（例: 「`_task-list/task-list.md` のタスクID `xxx` が完了したのでチェックしてください。」）
+    * 完了したタスクは、完了後速やかにチェックマーク (`[x]`) を付けます。GitHub Copilot が更新を指示されることもあります。（例: 「`_task-list.md` のタスクID `xxx` が完了したのでチェックしてください。」）
     * 開発中に新たに発見されたタスクや TODO は、「作業中に発見」などのセクションに適宜追加します。
 
 ### 4.2. プロンプトファイル (`.github/prompts/`)
@@ -104,7 +94,7 @@
     * ファイル名は以下の命名規則に従います。
         `.github/prompts/[YYYYMMDD]-[タスクid]-[タスク名]-[タスクの種類].prompt.md`
         * `[YYYYMMDD]`: 作成日 (例: 20240426)
-        * `[タスクid]`: `_task-list/task-list.md` で割り当てられたID (例: 123)
+        * `[タスクid]`: `_task-list.md` で割り当てられたID (例: 123)
         * `[タスク名]`: タスクの内容がわかる簡潔な名前 (例: loginFeature)
         * `[タスクの種類]`:
             * `feat`: 新機能開発
@@ -117,7 +107,7 @@
         * 例: `.github/prompts/20240426-123-loginFeature-feat.prompt.md`
 * **実行手順:**
     * 指示されたプロンプトファイルに基づいて、ファイル内に書かれた指示を実行します。
-    * 実行前に `_task-list/task-list.md` を確認し、現在のタスク状況を把握してください。
+    * 実行前に `_task-list.md` を確認し、現在のタスク状況を把握してください。
     * 実行時には、この `copilot-instructions.md` を含む、関連する全ての指示書ルールに従います。
 
 ### 4.3. プロンプトファイル完了後の処理
@@ -151,12 +141,12 @@
 * **不明点の確認:** 指示内容やコンテキストが不明確な場合は、必ず質問してください。
 * **ライブラリ/関数の使用:** 存在しない、あるいは検証されていないライブラリや関数は使用しないでください。既知で信頼できるもののみを使用します。
 * **パス/モジュールの確認:** コードやテストでファイルパスやモジュール名を参照する前に、それらが実際に存在することを確認してください。
-* **既存コードの扱い:** 明示的に指示されていない限り、または `_task-list/task-list.md` のタスクに含まれていない限り、既存のコードを削除したり上書きしたりしないでください。
+* **既存コードの扱い:** 明示的に指示されていない限り、または `_task-list.md` のタスクに含まれていない限り、既存のコードを削除したり上書きしたりしないでください。
 * **タスクへの集中:** プロジェクトの修正や変更を行う際は、一度に 1 つのタスクに集中してください。
 * **メモリーバンクの活用:**
     * 新しい会話を開始する際は、必ずメモリーバンク (`_memory-bank/_memory-bank-instructions.md`) を読み込み、過去の会話や作業内容を把握した上で作業を再開してください。
     * 作業内容に変更や修正があった場合は、メモリーバンクを更新してください。（更新が必要な場合は、その旨を指示します）
-* **タスクリストの更新:** コード変更後など、タスクの状況に変化があった場合は、`_task-list/task-list.md` を更新してください。（更新が必要な場合は、その旨を指示します）
+* **タスクリストの更新:** コード変更後など、タスクの状況に変化があった場合は、`_task-list.md` を更新してください。（更新が必要な場合は、その旨を指示します）
 
 ## 6. コーディング規約
 
@@ -275,4 +265,24 @@ O: Open/Closed Principle（オープン/クローズドの原則）
 L: Liskov Substitution Principle（リスコフの置換原則）
 I: Interface Segregation Principle（インターフェース分離の原則）
 D: Dependency Inversion Principle（依存性逆転の原則）
+
+1. **S: Single Responsibility Principle（単一責任の原則）**
+   - クラスやモジュールは、1つの責任（機能）だけを持つべきであり、その責任を変更する理由は1つだけであるべきです。
+   - 目的：コードの可読性と保守性を向上させる。
+
+2. **O: Open/Closed Principle（オープン/クローズドの原則）**
+   - ソフトウェアエンティティ（クラス、モジュール、関数など）は拡張に対して開かれており、修正に対して閉じられているべきです。
+   - 目的：既存のコードを変更せずに新しい機能を追加できるようにする。
+
+3. **L: Liskov Substitution Principle（リスコフの置換原則）**
+   - サブクラスは、その親クラスと置き換え可能でなければなりません（親クラスのインスタンスをサブクラスで置き換えても動作が変わらない）。
+   - 目的：継承関係の正当性を保証し、予期しない動作を防ぐ。
+
+4. **I: Interface Segregation Principle（インターフェース分離の原則）**
+   - クライアントは、自分が使用しないメソッドに依存してはならない（インターフェースは小さく、特化したものに分割すべき）。
+   - 目的：不要な依存関係を減らし、柔軟性を高める。
+
+5. **D: Dependency Inversion Principle（依存性逆転の原則）**
+   - 高レベルモジュールは低レベルモジュールに依存してはならず、両者とも抽象に依存すべきです。また、抽象は詳細に依存してはならず、詳細が抽象に依存すべきです。
+   - 目的：モジュール間の結合度を下げ、柔軟性と再利用性を向上させる。
 
