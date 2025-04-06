@@ -4,7 +4,10 @@
 
 このファイルは、GitHub Copilot に対するプロジェクト全体の基本的な指示を記述するものです。
 
+# このプロジェクトの指示書
 
+全体ルール
+このファイルです。
 
 
 
@@ -16,18 +19,19 @@
 
 ### 1.1. 参照する指示書ファイル群
 
-* **VSCode 設定:** `settings.json` (VSCode 固有の設定が含まれる場合があります)
-* **GitHub Copilot 全体指示書:** このファイル (`.github/copilot-instructions.md`) - **優先度: 普通**
-* **GitHub Copilot 個別指示書:** `.github` フォルダ内の特定の機能（コード生成、コミットメッセージ、レビュー、テスト、Supabase連携など）に関する指示書 - **優先度: 高**
+* VSCode 設定: `settings.json` (VSCode 固有の設定が含まれる場合があります)
+
+* GitHub Copilot 全体指示書: このファイル (`.github/copilot-instructions.md`) - 優先度: 普通
+* GitHub Copilot 個別指示書: `.github` フォルダ内の特定の機能（コード生成、コミットメッセージ、レビュー、テスト、Supabase連携など）に関する指示書 - 優先度: 高
     * `.copilot-codeGeneration-instructions.md`
     * `.copilot-commit-message-instructions.md`
     * `.copilot-review-instructions.md`
     * `.copilot-test-instructions.md`
     * `.supabase-instructions.md`
-* **GitHub Copilot プロンプト用ルール:** `.github/prompts` フォルダ内の個別のタスク指示書 (`[YYYYMMDD]-[タスクid]-[タスク名]-[タスクの種類].prompt.md`) - **優先度: 低** (ただし、特定のタスク実行時は最優先される場合がある)
-* **メモリーバンク:** `_memory-bank/_memory-bank-instructions.md` (過去の会話や作業内容の記録。会話開始時に読み込む)
-* **タスクリスト:** `_task-list/task-list.md` (プロジェクトのタスク一覧)
-* **設計書:** `design/` ディレクトリ内のファイル群
+* GitHub Copilot プロンプト用ルール: `.github/prompts` フォルダ内の個別のタスク指示書 (`[YYYYMMDD]-[タスクid]-[タスク名]-[タスクの種類].prompt.md`) - 優先度: 低 (ただし、特定のタスク実行時は最優先される場合がある)
+* メモリーバンク: `_memory-bank/_memory-bank-instructions.md` (過去の会話や作業内容の記録。会話開始時に読み込む)
+* タスクリスト: `_task-list/task-list.md` (プロジェクトのタスク一覧)
+* 設計書: `design/` ディレクトリ内のファイル群
 
 ```
 .

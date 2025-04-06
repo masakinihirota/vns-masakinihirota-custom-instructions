@@ -1,24 +1,24 @@
 # 利用方法
 
-VS Codeワークスペースを利用して
-コードのリポジトリ
-設定書のリポジトリ、またはフォルダ(_design/)
-指示書のリポジトリ(このリポジトリ)
-を用意して、コードのリポジトリは指示書のリポジトリを参照するように設定してください。
-
-そして、実際に指示する前に、GitHub Copilotに
-どの指示書のファイルを読み込んでいるか？
-そして、ルールをどの用に認識しているか？
+最初に指示する前に、
+* 設計書の確認
+* Webアプリのテンプレートの確認
+* 環境変数を手動で設定
+* ソース整形ツール Biome、Prettierの設定
+* タスクの確認(最初は空)
+* メモリーバンクの確認(最初は空)
+* GitHub Copilotにどの指示書のファイルを読み込んでいるか？そして、ルールをどの用に認識しているか？
 の確認をします。
 
+※ソース整形はツールに任せます
+※タスクは設計書から作成します。
+※メモリーバンクとは開発の記録であり、現状をGitHub Copilotに継続させるための機能です。
 
-# Webアプリと設計書とGitHub Copilotの指示書の各リポジトリを１つのように扱う
+複数のgitリポジトリを、共通のGitHub Copilotのルールで利用する方法は？
+
+
 
 ## 選択肢
-
-条件:
-WebアプリはGitのpublicで管理
-設計書、GitHub Copilotの指示書はGitのprivateで管理
 
 1. サブモジュール - 独立して開発される2つのプロジェクトを一緒に使用したい場合
 2. サブツリー - リポジトリの履歴を統合したいが、別々のリポジトリも維持したい場合
@@ -27,24 +27,7 @@ WebアプリはGitのpublicで管理
 
 この中から4を選びます。
 
-# VS Codeワークスペースでの管理方法: それぞれ独立させ管理する
-
-## VS Codeワークスペースの構成
-
-my-project-a.code-workspace
-├── code_repo_A/ (Webアプリのコード)
-├── design (設計書) もしくは _design/
-└── github-copilot-custom-instructions/ (指示書)
-
-この構成では、
-* 生成されたコードのリポジトリ
-* 設計書のリポジトリ または フォルダ
-* 指示書のリポジトリを
-の3つで管理しています。
-
-VS Codeのワークスペース機能を使用すると、これらの複数のリポジトリを1つのVS Codeウィンドウで効率的に管理できます。
-
-
+ワークスペースを採用しました。
 
 ## VS Codeのワークスペースの作成手順
 
@@ -56,7 +39,163 @@ VS Codeのワークスペース機能を使用すると、これらの複数の�
 6. ワークスペースファイル (`.code-workspace`) を開いて、プロジェクトを開きます。 VS Codeは、指示書リポジトリとコードリポジトリを1つのウィンドウに表示します。
 7. GitHub Copilotに指示書を読んで、コードのリポジトリに生成するように指示します。
 
+
+
+VSCodeのワークスペースを利用して
+各リポジトリを一つのワークスペースとします。
+
+## リポジトリの構成
+
+VS Codeワークスペースを利用して
+* Webアプリのリポジトリ vns-masakinihirota
+* 指示書のリポジトリ(このリポジトリ) vns-masakinihirota-custom-instructions
+* 設定書のリポジトリ vns-masakinihirota-design
+* タスクリストのリポジトリ vns-masakinihirota-design-task-list
+* Webアプリの公開ドキュメントのリポジトリ vns-masakinihirota-doc
+を用意して、一つにまとめます。
+
+
+
+## 指示書
+
+設計書を作り、タスク分解をしてそれぞれタスクリストに登録。
+タスクリストから1つタスクを取り出し、GitHub Copilotと相談してプロンプトファイル(＝実装書)を作り上げて、コードの生成をしてもらう。
+
+
+
+### 4種類の指示書を使い分ける
+
+* VSCodeへの設定
+* GitHub Copilotの全体
+* GitHub Copilotの個別
+* プロンプトファイル(＝実装書)
+
+GitHub Copilotがワークスペース内の指示書を読み込む際の適切な場所と分割された指示書を読み込む方法について。
+
+* settings.json
+
+VSCodeに登録する固定のルール
+
+例
+日本語で答えてください。
+
+* 全体の指示書
+
+このプロジェクト全体のルール
+
+`vns-masakinihirota-custom-instructions/.github/copilot-instructions.md`
+
+* 個別の指示書
+
+全体の指示書に書いてないルール
+
+ .github フォルダ内に以下のように配置します。
+
+ ```
+ .github\
+    .copilot-codeGeneration-instructions.md（コード生成に関するルール）
+    .copilot-commit-message-instructions.md（コミットメッセージに関するルール）
+    .copilot-review-instructions.md（コードレビューに関するルール）
+    .copilot-task-instructions.md（タスクに関するルール）
+    .copilot-test-instructions.md（テストに関するルール）
+    .supabase-instructions.md（Supabaseに関するルール）
+
+```
+
+* プロンプトファイル(実装ファイル)
+    タスクごとの詳細な指示を記述します。
+
+```
+.github\prompts\
+    20250401-000-template.prompt.md
+
+```
+
+命名規則: `[YYYYMMDD]-[タスクID]-[タスク名]-[タスクの種類].prompt.md`
+例: `20250401-001-loginFeature-feat.prompt.md`
+
+
+
 ---
+
+# 分割された指示書を読み込む方法
+
+分割された指示書を読み込むには、以下の手順を実行します。
+
+## (1) プロンプトファイルで明示的に指定する
+プロンプトファイルの冒頭に、読み込む指示書を明記します。以下は例です：
+
+```markdown
+# 指示書の読み込み指定
+
+以下の指示書を参照してください：
+1. **全体のルール:** `.github/copilot-instructions.md`
+2. **コード生成に関するルール:** `.github/.copilot-codeGeneration-instructions.md`
+3. **テストに関するルール:** `.github/.copilot-test-instructions.md`
+4. **Supabaseのルール:** `.github/.supabase-instructions.md`
+
+```
+
+## (2) 優先順位を設定する
+
+指示内容が競合する場合、優先順位を設定します。以下は例です：
+
+```markdown
+# 指示書の優先順位
+
+1. プロンプトファイル（`.github/prompts/` 内のタスク指示書）
+2. 個別の指示書（`.github/.copilot-*.md`）
+3. 全体の指示書（`.github/copilot-instructions.md`）
+
+```
+
+## (3) VSCodeの設定を確認する
+
+`settings.json` ファイルで、GitHub Copilotが参照する指示書を指定できます。以下は例です：
+
+```json
+{
+  "github.copilot.chat.instructions": [
+    {
+      "file": ".github/copilot-instructions.md"
+    },
+    {
+      "file": ".github/.copilot-codeGeneration-instructions.md"
+    },
+    {
+      "file": ".github/.copilot-test-instructions.md"
+    }
+  ]
+}
+
+```
+
+※👆ワークスペースを利用した場合の設定方法は不明です。
+
+
+---
+
+ブーメラン
+
+大きな文脈、設計書などを小さなタスクにして、それぞれ開発をして、つなげていこうという思想です。
+
+
+
+
+---
+
+#  その他
+
+- **メモリーバンクの活用**: _memory-bank-instructions.md を利用して、過去の会話や作業内容を記録し、必要に応じて参照してください。
+- **タスクリストの管理**: task-list.md にタスクを登録し、進捗を管理します。
+- **プロンプトファイルのテンプレート**: 20250401-000-template.prompt.md を作成しておくと便利です。
+
+これらを活用することで、GitHub Copilotが適切に指示書を読み込み、効率的に作業を進められるようになります。
+
+
+
+---
+
 
 # Copilot の長所と短所
 
@@ -120,28 +259,16 @@ Copilotを最新の状態に保つ、拡張機能の更新を行う。
 
 ---
 
-# Webアプリ開発での、指示書を利用する基本方針
-
-## 4種類の指示書を使い分ける
-
-* VSCodeへの設定
-* GitHub Copilotの全体
-* GitHub Copilotの個別
-* プロンプトファイル(＝実装書)
-
-設計書を作り、タスク分解をしてそれぞれタスクリストに登録。
-タスクリストから1つタスクを取り出し、GitHub Copilotと相談してプロンプトファイル(＝実装書)を作り上げて、コードの生成をしてもらう。
 
 
 
-## それぞれの指示書の役割
 
-* GitHub Copilotに対する指示書
-VSCodeに設定するのは、どんなときでも常に適用するルール
-* copilot-instructions.md GitHub Copilotがプロジェクト単位で適用する全体のルール。
-* .github/.copilot-*****-instructions.md GitHub Copilotの全体ルールに入らないその他、細かいルール
-* .github/prompts/[日付]-[タスクid]-[タスク名]-[タスクの種類].prompt.md
-プロンプトファイル(拡張子が.prompt.md)
+
+
+
+
+
+
 
 
 ---
@@ -439,8 +566,17 @@ AIが読み込む情報に対して、各ツールは以下のような違いが
 * MCP (Model Context Protocol)：GitHub Copilot Agent modeで外部サービスと連携するための設定プロトコル。
 * GitHub Copilot Agent mode：GitHub Copilotの機能の一つで、外部ツールやサービスと連携してより高度な支援を行うモード。
 
-# 参考資料
 
-* Cline / Roo-Codeにおけるコード理解と新規・保守タスクの現状 [https//zenn.dev/tesla/articles/33d196d17bf3bb](https//zenn.dev/tesla/articles/33d196d17bf3bb)
+
+
+
+
+
+
+
+
+
+
+
 
 
