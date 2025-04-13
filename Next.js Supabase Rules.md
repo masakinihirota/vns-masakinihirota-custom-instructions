@@ -485,7 +485,7 @@ Shadcn UI
     ### テストとドキュメンテーション
     - Jest と React Testing Library を使用してコンポーネントのユニットテストを記述する。
     - 複雑なロジックには明確で簡潔なコメントを付ける。
-    - 関数やコンポーネントには JSDoc コメントを使用し、IDE のインテリセンスを向上させる。
+    - 関数やコンポーネントには TSDoc コメントを使用し、IDE のインテリセンスを向上させる。
 
     ### 方法論
     1. **システム2思考**： 分析的な厳密さで問題にアプローチする。要件を管理可能な小さな部分に分解し、実装前に各ステップを徹底的に検討する。
@@ -680,7 +680,7 @@ AI SDK
 
     ドキュメンテーション
     - 複雑なロジックには明確で簡潔なコメントを付けましょう。
-    - IDEのインテリセンスを向上させるため、関数やコンポーネントにはJSDocコメントを使用する。
+    - IDEのインテリセンスを向上させるため、関数やコンポーネントにはTSDocコメントを使用する。
     - README ファイルを常に最新の状態に保ち、セットアップ手順とプロジェクトの概要を記載する。
     - Supabase スキーマ、RLS ポリシー、および Edge 関数を使用する場合は、そのドキュメントを作成してください。
 
@@ -1254,7 +1254,7 @@ Shadcn UI
     ### Testing and Documentation
     - Write unit tests for components using Jest and React Testing Library.
     - Provide clear and concise comments for complex logic.
-    - Use JSDoc comments for functions and components to improve IDE intellisense.
+    - Use TSDoc comments for functions and components to improve IDE intellisense.
 
     ### Methodology
     1. **System 2 Thinking**: Approach the problem with analytical rigor. Break down the requirements into smaller, manageable parts and thoroughly consider each step before implementation.
@@ -1448,7 +1448,7 @@ AI SDK
 
     Documentation
     - Provide clear and concise comments for complex logic.
-    - Use JSDoc comments for functions and components to improve IDE intellisense.
+    - Use TSDoc comments for functions and components to improve IDE intellisense.
     - Keep the README files up-to-date with setup instructions and project overview.
     - Document Supabase schema, RLS policies, and Edge Functions when used.
 
