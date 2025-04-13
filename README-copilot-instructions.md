@@ -10,10 +10,20 @@
 - **内容:** 概要、構造、アーキテクチャ、技術スタック、基本ルール。
 
 ### 1.2 個別の指示書
-- **例:** `.copilot-codeGeneration-instructions.md`（コード生成）、`.copilot-test-instructions.md`（テスト）。
+
 - **役割:** 全体指示書を補完する詳細ルール。
 
+`.copilot-codeGeneration-instructions.md`（コード生成）
+`.copilot-commit-messages-instructions.md`（コミットメッセージ）。
+`.copilot-review-instructions.md`（コードレビュー）。
+`.copilot-task-instructions.md`（タスク管理）。
+`.copilot-test-instructions.md`（テスト）。
+`.copilot-*****-instructions.md`（その他のルール）。
+
 ### 1.3 プロンプトファイル
+
+タスクごとに詳細な実装指示を記述するファイル。
+
 - **フォルダ:** `.github/prompts/`
 - **フォーマット:** `[YYYYMMDD]-[タスクID]-[タスク名]-[タスクの種類].prompt.md`
   - **例:** `20250401-001-loginFeature-feat.prompt.md`
@@ -109,14 +119,6 @@
 ### メモリーバンクの新しいチャットのタイミング
 - 新しいプロンプトファイルで実装を開始する時。
 - コンテキストが大きくなり応答が遅くなった時。
-
----
-
-### 校正のポイント:
-1. **冗長な表現を削除:** 簡潔でわかりやすい表現に変更しました。
-2. **セクションの整理:** 内容を論理的に整理し、読みやすくしました。
-3. **具体例の追加:** プロンプトファイルの例を明確に記述しました。
-4. **注意点の強調:** 必須事項と禁止事項を明確に分け、重要なポイントを強調しました。
 
 
 

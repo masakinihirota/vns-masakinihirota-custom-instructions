@@ -1,22 +1,9 @@
 このファイルを参照したら、このファイル名を発言してください。
 
-# このプロジェクトのワークスペースのリポジトリ構成
+# このプロジェクトのWebアプリ全体の指示書
 
-このプロジェクトは、
-以下のリポジトリをVS Codeワークスペースで統合しています。
-
-1. **Webアプリリポジトリ:** `vns-masakinihirota`
-1. **指示書リポジトリ:** `vns-masakinihirota-custom-instructions`
-3. **設計書リポジトリ:** `vns-masakinihirota-design`
-4. **タスクリストリポジトリ:** `vns-masakinihirota-design-task-list`
-5. **公開ドキュメントリポジトリ:** `vns-masakinihirota-doc`
-5. **サンプルリポジトリ:** `vns-masakinihirota-sample`
-
-
-
-# GitHub Copilot 指示書
-
-このファイルは、GitHub Copilot に対するプロジェクト全体の基本的な指示を記述するものです。
+このファイルは、GitHub Copilot を利用してWeb アプリを開発する際の指示書です。
+この指示書は、プロジェクト全体の開発方針やルールを定めたものであり、GitHub Copilot によるコード生成やレビュー、テストなどの作業を行う際に従うべきガイドラインを提供します。
 
 ## 1. 指示書の全体像と優先順位
 
@@ -27,24 +14,26 @@
 * メモリーバンク: `_memory-bank/_memory-bank-instructions.md` (過去の会話や作業内容の記録。会話開始時に読み込む)
 
 
+
 ### 指示書のファイル構成
 
 ```
 .
-├── _memory-bank
-│   └── _memory-bank-instructions.md          # メモリーバンク指示
-├── .github
-│   ├── prompts        (プロンプトファイル)
-│   │   ├── completes # (使用目的不明瞭)
-│   │   └── [YYYYMMDD]-[タスクid]-[タスク名]-[タスクの種類].prompt.md
-│   ├── .copilot-codeGeneration-instructions.md # コード生成指示 (個別の指示書)
-│   ├── .copilot-commit-message-instructions.md # コミットメッセージ指示 (個別の指示書)
-│   ├── .copilot-review-instructions.md       # レビュー指示 (個別の指示書)
-│   ├── .copilot-task-instructions.md         # タスク指示 (個別の指示書)
-│   ├── .copilot-test-instructions.md         # テスト指示 (個別の指示書)
-│   ├── .supabase-instructions.md             # Supabase連携指示 (個別の指示書)
-│   └── copilot-instructions.md               # このファイル (全体指示)
-└── README-copilot-instructions.md            # (この指示書に関する説明)
+
+└── .github
+    ├─ _memory-bank
+    │   └── _memory-bank-instructions.md          # メモリーバンク指示
+    ├── prompts        (プロンプトファイル)
+    │   ├── completes # (使用目的不明瞭)
+    │   └── [YYYYMMDD]-[タスクid]-[タスク名]-[タスクの種類].prompt.md
+    ├── .copilot-codeGeneration-instructions.md # コード生成指示 (個別の指示書)
+    ├── .copilot-commit-message-instructions.md # コミットメッセージ指示 (個別の指示書)
+    ├── .copilot-review-instructions.md       # レビュー指示 (個別の指示書)
+    ├── .copilot-task-instructions.md         # タスク指示 (個別の指示書)
+    ├── .copilot-test-instructions.md         # テスト指示 (個別の指示書)
+    ├── .supabase-instructions.md             # Supabase連携指示 (個別の指示書)
+    └── copilot-instructions.md               # このファイル (全体指示)
+
 
 ```
 
