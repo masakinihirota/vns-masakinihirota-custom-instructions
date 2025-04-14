@@ -48,9 +48,8 @@ README-copilot-instructions.md 指示書の書き方。
 
 ```plaintext
 指示書
-      👇️アプリコードの指示書
+      👇️Webアプリ コードの指示書
 ├── .github
-│   ├── _memory-bank
 │   ├── prompts
 │   │   ├── completes
 │   │   ├── 20250401-000-template.prompt.md
@@ -63,8 +62,7 @@ README-copilot-instructions.md 指示書の書き方。
 │   ├── .copilot-test-instructions.md
 │   ├── .supabase-instructions.md
 │   └── copilot-instructions.md
-│   👇️アプリコード以外の指示書
-├── Next.js Supabase Rules.md
+│   👇️Webアプリ コード以外の指示書
 ├── README-copilot-instructions.md
 ├── README-settings.json.md
 └── README.md
