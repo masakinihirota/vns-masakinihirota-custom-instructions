@@ -5,8 +5,6 @@
 
 # GitHub Copilot 指示書の書き方
 
-.githubフォルダの中にプロジェクトのWebアプリの指示書を管理するためのファイル群を用意します。
-
 ## 1. 指示書の種類と役割
 
 ### 1.1 全体の指示書
@@ -25,14 +23,16 @@
 `.copilot-test-instructions.md`（テスト）。
 `.copilot-*****-instructions.md`（その他のルール）。
 
-
 ---
 
 ## 2. 指示書の優先順位
 
-1. **プロンプトファイル:** `.github/prompts/` 内のタスク指示書。
-2. **個別の指示書:** `.github/` 内の `.copilot-*.md` ファイル。
-3. **全体の指示書:** `copilot-instructions.md`。
+1. **プロンプトファイル:**
+リポジトリ `vns-masakinihirota-design-task-list` 内の `prompts/` フォルダにあるプロンプトファイル。
+2. **個別の指示書:**
+リポジトリ `vns-masakinihirota-custom-instructions` 内の `.github/` フォルダにある `.copilot-*.md` ファイル。
+3. **全体の指示書:**
+リポジトリ `vns-masakinihirota-custom-instructions` 内にある `copilot-instructions.md` ファイル。
 
 ---
 
@@ -53,39 +53,10 @@
 
 ---
 
-## 4. プロンプトファイルの例
+## その他の注意点
 
-### フォーマット
-```markdown
-## 指示書と優先順位
-
-以下の指示書を参照し、優先順位に従って作業を進めてください。
-
-### 指示書一覧
-1. **全体のルール:** `.github/copilot-instructions.md`
-2. **コード生成に関するルール:** `.github/.copilot-codeGeneration-instructions.md`
-3. **テストに関するルール:** `.github/.copilot-test-instructions.md`
-
-### 優先順位
-1. `.github/.copilot-codeGeneration-instructions.md`
-2. `.github/.copilot-test-instructions.md`
-3. `.github/copilot-instructions.md`
-```
-
----
-
-## 5. MCP (Model Context Protocol)
-
-- **ファイル名:** `mcp.json`
-- **役割:** GitHub Copilot Agent Modeで使用する設定ファイル。
-
----
-
-## 6. その他の注意点
-
-- **テストコード:** 自動生成されたコードにも必ずテストを記述。
+- **テストコード:** 自動生成されたコードに必ずテストを記述。
 - **盲目的な信頼の禁止:** 提案されたコードは必ず検証。
 - **失敗したコードの破棄:** 不要なコードは残さず削除。
 
 ---
-

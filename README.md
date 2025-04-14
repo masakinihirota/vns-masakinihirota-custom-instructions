@@ -17,30 +17,26 @@
 
 ----------------------------------------
 
-# 指示書
+# このリポジトリについて
 
-指示書には、
-VSCode本体のsettings.json
-プロジェクトの*****.-custom-instructionsリポジトリ内の指示書郡
-があります。
+このリポジトリは、GitHub Copilotへの指示書を管理するためのものです。
 
-* settings.jsonは、VSCode本体の設定を行うためのファイルです。
-この設定は、各自で自由に設定してください。
-* *****-custom-instructionsリポジトリは、GitHub Copilotの指示書を管理するためのリポジトリです。
-
-## 全体説明の指示書
+## このリポジトリについての説明
 
 README.md このファイル
 README-copilot-instructions.md 指示書の書き方。
+README-development-workflow.md 開発フロー。
 
-## プロジェクトのコードへの指示書
+# 指示書
 
-.github GitHub Copilotに直接命令をするファイル群
-があります。
+指示書には、
+* VSCode本体のsettings.json
+* プロジェクトの `.github/*****-instructions.md`リポジトリ内の指示書郡があります。
+
+* settings.jsonは、VSCode本体の設定を行うためのファイルです。
+この設定は、各自で自由に設定してください。
 
 ## GitHub Copilot 指示書リポジトリのファイル構成
-
-```plaintext
 
 このリポジトリは、GitHub Copilotの指示書を管理するためのものです。他のWebアプリのリポジトリと連携して利用します。
 
@@ -50,11 +46,6 @@ README-copilot-instructions.md 指示書の書き方。
 指示書
       👇️Webアプリ コードの指示書
 ├── .github
-│   ├── prompts
-│   │   ├── completes
-│   │   ├── 20250401-000-template.prompt.md
-│   │   ├── 20250401-001-user-authentication-feat.prompt.md
-│   │   └── 20250401-002-user-profile.prompt.md
 │   ├── .copilot-codeGeneration-instructions.md
 │   ├── .copilot-commit-message-instructions.md
 │   ├── .copilot-review-instructions.md
@@ -62,9 +53,8 @@ README-copilot-instructions.md 指示書の書き方。
 │   ├── .copilot-test-instructions.md
 │   ├── .supabase-instructions.md
 │   └── copilot-instructions.md
-│   👇️Webアプリ コード以外の指示書
 ├── README-copilot-instructions.md
-├── README-settings.json.md
+├── README-development-workflow.md
 └── README.md
 
 ```
