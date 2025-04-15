@@ -28,7 +28,7 @@
 ## 2. 指示書の優先順位
 
 1. **プロンプトファイル:**
-リポジトリ `vns-masakinihirota-design-task-list` 内の `prompts/` フォルダにあるプロンプトファイル。
+リポジトリ `vns-masakinihirota-custom-instructions` 内の `.github/prompts/` フォルダにあるプロンプトファイル。
 2. **個別の指示書:**
 リポジトリ `vns-masakinihirota-custom-instructions` 内の `.github/` フォルダにある `.copilot-*.md` ファイル。
 3. **全体の指示書:**
