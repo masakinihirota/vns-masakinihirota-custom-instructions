@@ -1,38 +1,72 @@
-このリポジトリの使い方
+# このリポジトリの使い方
 
-開発に必要なリポジトリを揃えます。
+このリポジトリは、GitHub Copilotへの指示書を管理するためのものです。以下に、このリポジトリの構造と使用方法について説明します。
 
-## プロジェクト全体のリポジトリ
+このリポジトリでは
+* GitHub Copilotへの指示書ファイル群
+* タスク関連のファイル群
+を管理しています。
 
-- **コードリポジトリ:** Webアプリのリポジトリを用意します。
-- **指示書リポジトリ:** GitHub Copilotの指示書リポジトリを用意します。
-- **設計書リポジトリ:** 設計書を管理するリポジトリを用意します。
-- **タスクリストリポジトリ:** タスクリストを管理するリポジトリを用意します。
-- **ドキュメントリポジトリ:** ドキュメントを管理するリポジトリを用意します。
-- **サンプルリポジトリ:** サンプルコードを管理するリポジトリを用意します。
+---
 
-このリポジトリは指示書のリポジトリです。
+## このフォルダの構造
 
+```
+vns-masakinihirota-custom-instructions
+├── .github
+│   ├── supabase
+│   │   ├── .supabase-instructions.md
+│   │   ├── code-format-sql.md
+│   │   ├── database-create-migration.md
+│   │   ├── database-functions.md
+│   │   ├── database-rls-policies.md
+│   │   ├── declarative-database-schema.md
+│   │   ├── edge-functions.md
+│   │   ├── nextjs-supabase-auth.md
+│   │   └── README.md
+│   ├── .context7-instructions.md
+│   ├── .copilot-codeGeneration-instructions.md
+│   ├── .copilot-commit-message-instructions.md
+│   ├── .copilot-review-instructions.md
+│   ├── .copilot-task-instructions.md
+│   └── .copilot-test-instructions.md
+├── tasks
+│   ├── archived
+│   ├── doing
+│   ├── done
+│   └── todo
+│       └── 20240416-001-loginFeature-feat.prompt.md
+├── copilot-instructions.md
+├── README.md
+└── TASK_LIST.md
+```
 
+---
 
+## 各フォルダ、ファイルの役割
 
-----------------------------------------
+- `.github/`: 個別の指示書を格納します。Supabaseやタスク管理、コードレビューなどの指示書が含まれます。
+- `tasks/`: タスクの状態ごとにフォルダを分けて管理します。
+  - `todo/`: 未着手のタスクを格納します。
+  - `doing/`: 現在作業中のタスクを格納します。
+  - `done/`: 完了したタスクを格納します。
+  - `archived/`: 完了後、一定期間経過したタスクを保管します。
+- `copilot-instructions.md`: GitHub Copilotへの全体的な指示書を記載します。
+- `TASK_LIST.md`: タスク全体のリストを管理します。
 
-# このリポジトリについて
+---
 
-このリポジトリは、GitHub Copilotへの指示書を管理するためのものです。
+## 指示書の構造
 
-## このリポジトリについての説明
+`copilot-instructions.md`
+このワークスペースでの vns-masakinihirotaプロジェクトを開発するためのGitHub Copilotへの全体の指示書です。
 
-指示書には、
-* VSCode本体のsettings.json
-* プロジェクトの `.github/*****-instructions.md`リポジトリ内の指示書があります。
+`.github`フォルダ以下にGitHub Copilotへの指示書が格納されています。
 
+`.github/supabase`フォルダ以下にSupabaseに関する指示書が格納されています。Supabaseの機能や設定に関する詳細な指示が含まれています。
 
+---
 
-# このリポジトリのフォルダの役割
+## このリポジトリの目的
 
-`.github/` 個別の指示書を入れます。
-`prompts/` 実装するプロンプトファイルを入れます。
-`task-list/` タスクリストと、作成した実装前のプロンプトファイルを入れます。
-`completes/` 実装後のプロンプトファイルを入れます。
+このリポジトリは、GitHub Copilotを活用した効率的な開発をサポートするための指示書を管理します。タスク管理や指示書の作成を通じて、プロジェクトの進行をスムーズに進めることを目指します。
