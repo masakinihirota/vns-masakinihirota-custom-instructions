@@ -8,13 +8,42 @@
 
 ## 指示書の種類と役割
 
+### 役を演じてください。
+
+Characterを演じるために次のファイルを読み込んでください。
+`.github/.copilot-character-instructions.md`
+
+このファイルには、GitHub Copilotに特定の役割を演じさせるための指示が含まれています。
+この役割は、プロジェクトの特定のニーズに応じてカスタマイズされており、GitHub Copilotがより適切なコード生成やレビューを行うためのものです。
+
+
+# プロジェクトメインルール
+
+## ドメイン知識
+ユーザーから渡されたファイル内容を分析して適切なドメイン知識のルールを適用してください。
+優先順位の指定があれば守ってください。
+指示書のファイル名にはそのドメイン知識の名前が含まれています。
+
 ### 1. 全体の指示書
+
+このファイルです。
+プロジェクト全体の指示のための指示書です。
+
 - **ファイル名:** `copilot-instructions.md`
 - **役割:** プロジェクト全体のルールを記述。
 - **内容:** 概要、使用する指示書、指示書ファイルの優先順位、ワークフロー。
 
 ### 2. 個別の指示書
-- **ファイル名:**
+
+- **役割:** 特定のタスクや機能に関する詳細な指示書。全体指示書を補完する詳細ルール。
+
+個別の指示書を使用して、特定のタスクや機能に関する詳細な指示を提供します。
+
+これらの個別指示書は、全体指示書のルールを補完し、特定の作業時に優先的に参照してください。
+
+#### ドメイン知識
+
+- **ファイル名:** (ドメイン知識)
   - `.github/.copilot-codeGeneration-instructions.md`（コード生成）
   - `.github/.copilot-commit-message-instructions.md`（コミットメッセージ）
   - `.github/.copilot-review-instructions.md`（コードレビュー）
@@ -22,7 +51,9 @@
   - `.github/.copilot-test-instructions.md`（テスト）
   - `.github/.context7-instructions.md`（コンテキスト）
   - `.github/.figma-instructions.md`（Figma）
-  - `.github/supabase/.supabase-instructions.md`（Supabase）
+
+  #### Supabase関連
+  - `.github/supabase/.supabase-instructions.md`
   - `.github/supabase/code-format-sql.md`
   - `.github/supabase/database-create-migration.md`
   - `.github/supabase/database-functions.md`
@@ -31,7 +62,7 @@
   - `.github/supabase/edge-functions.md`
   - `.github/supabase/nextjs-supabase-auth.md`
 
-- **役割:** 特定のタスクや機能に関する詳細な指示書。全体指示書を補完する詳細ルール。
+
 
 ### 3. タスクリスト
 - **ファイル名:** `TASK_LIST.md`
@@ -42,9 +73,10 @@
 ```markdown
 # プロジェクトタスクリスト
 
-- [ ] タスク001：ログインUI実装 ([詳細](tasks/todo/task_001_implement_login_ui.prompt.md))
-- [~] タスク002：ユーザーAPI実装 ([詳細](tasks/doing/task_002_implement_user_api.prompt.md))
-- [x] タスク003：データベース初期設定 ([詳細](tasks/done/task_003_database_setup.prompt.md))
+- [ ] タスク001：ログインUI実装 (`tasks/todo/task_001_implement_login_ui.prompt.md`)
+- [~] タスク002：ユーザーAPI実装 (`tasks/doing/task_002_implement_user_api.prompt.md`)
+- [x] タスク003：データベース初期設定 (`tasks/done/task_003_database_setup.prompt.md`)
+
 ```
 
 ### 4. タスクファイル
@@ -179,3 +211,4 @@ GitHub MCP
 - **テストコード:** 自動生成されたコードには必ずテストを記述。
 - **盲目的な信頼の禁止:** 提案されたコードは必ず検証。
 - **失敗したコードの破棄:** 不要なコードは残さず削除。
+タスク詳細ファイルを移動した際は、TASK_LIST.mdのリンクを忘れずに更新してください。
