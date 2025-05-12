@@ -25,6 +25,7 @@ vns-masakinihirota-custom-instructions
 │   │   ├── nextjs-supabase-auth.md
 │   │   └── README.md
 │   ├── .context7-instructions.md
+│   ├── .copilot-character-instructions.md
 │   ├── .copilot-codeGeneration-instructions.md
 │   ├── .copilot-commit-message-instructions.md
 │   ├── .copilot-review-instructions.md
@@ -35,7 +36,6 @@ vns-masakinihirota-custom-instructions
 │   ├── doing
 │   ├── done
 │   └── todo
-│       └── 20240416-001-loginFeature-feat.prompt.md
 ├── copilot-instructions.md
 ├── README.md
 └── TASK_LIST.md
