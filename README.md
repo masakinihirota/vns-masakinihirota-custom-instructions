@@ -17,6 +17,11 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 コマンド パレット ( Ctrl+Shift+P ) から [チャット: 新しい命令ファイル]を実行します。
 指示ファイルの名前を入力します。
 
+## 新しくワークスペースプロンプトファイルを作成する
+
+コマンド パレット ( Ctrl+Shift+P ) から [チャット: 新しいプロンプト ファイル]コマンドを実行します。
+プロンプトファイルの名前を入力します。
+
 ## 指示書の同期
 
 他のデバイスとの同期を行います。
