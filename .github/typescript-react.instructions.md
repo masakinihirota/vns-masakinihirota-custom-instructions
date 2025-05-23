@@ -2,6 +2,10 @@
 applyTo: "**/*.ts,**/*.tsx"
 ---
 
+このファイルを参照したら、このファイル名を発言してください。
+
+
+
 # TypeScript と React のコーディング標準
 
 すべてのコードに [copilot-codeGeneration-instructions](.copilot-codeGeneration-instructions.md) を適用してください。

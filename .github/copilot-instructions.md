@@ -1,5 +1,8 @@
 このファイルを参照したら、このファイル名を発言してください。
 
+VS Codeでチャット応答をカスタマイズする
+https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental
+
 # プロジェクト全体の指示書
 
 このファイルは、masakinihirota Webアプリ開発のための全体指示書です。開発方針・ルール・ワークフロー・運用方法を明確にし、誰でも迷わず開発できることを目指します。
