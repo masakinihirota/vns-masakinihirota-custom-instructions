@@ -1,4 +1,5 @@
 ---
 applyTo: '**'
 ---
-Coding standards, domain knowledge, and preferences that AI should follow.
+
+AIが従うべきコーディング標準、ドメイン知識、および好み。
