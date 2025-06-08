@@ -81,8 +81,9 @@ Apply the [general coding guidelines](./general-coding.instructions.md) to all c
 このリポジトリは、GitHub Copilotへの指示書を管理するためのものです。以下に、このリポジトリの構造と使用方法について説明します。
 
 このリポジトリでは
-* GitHub Copilotへの指示書ファイル群
-* タスク関連のファイル群
+* GitHub Copilotへの指示書ファイル
+* プロンプトファイル
+* タスク関連のファイル
 を管理しています。
 
 
@@ -163,6 +164,8 @@ vns-masakinihirota-custom-instructions
 │   │   ├── edge-functions.md
 │   │   ├── nextjs-supabase-auth.md
 │   │   └── README.md
+│   ├── キャラクター
+│   │   └── character-instructions.md
 │   ├── .context7-instructions.md
 │   ├── .copilot-character-instructions.md
 │   ├── .copilot-codeGeneration-instructions.md
@@ -170,7 +173,7 @@ vns-masakinihirota-custom-instructions
 │   ├── .copilot-review-instructions.md
 │   ├── .copilot-task-instructions.md
 │   └── .copilot-test-instructions.md
-├── tasks
+├── _tasks
 │   ├── archived
 │   ├── doing
 │   ├── done
@@ -185,7 +188,7 @@ vns-masakinihirota-custom-instructions
 ## 各フォルダ、ファイルの役割
 
 - `.github/`: 個別の指示書を格納します。Supabaseやタスク管理、コードレビューなどの指示書が含まれます。
-- `tasks/`: タスクの状態ごとにフォルダを分けて管理します。
+- `_tasks/`: タスクの状態ごとにフォルダを分けて管理します。
   - `todo/`: 未着手のタスクを格納します。
   - `doing/`: 現在作業中のタスクを格納します。
   - `done/`: 完了したタスクを格納します。
