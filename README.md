@@ -1,16 +1,26 @@
 Customize chat responses in VS Code
 https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental
 
-## Markdownリンク
-他の指示書を読み込む時に使用します。
-
-[タイトル](相対パス)
-
-他の指示書を相対パスで指定します。
-
 ## ワークスペース
 
-プロジェクト全体のファイルを管理します。
+プロジェクト全体のリポジトリを管理します。
+
+### ワークスペース内のリポジトリ群
+
+* vns-masakinihirota
+  Webアプリのソースコードのリポジトリ
+
+* vns-masakinihirota-custom-instructions
+  GitHub Copilotへの指示書、タスクリストやプロンプトファイルを管理しています。
+
+* vns-masakinihirota-design
+  設計書のリポジトリ
+
+* vns-masakinihirota-doc
+  ドキュメントのリポジトリ
+
+* vns-masakinihirota-sample
+  サンプルのリポジトリ
 
 ## 新しく指示書を作成する
 
@@ -48,6 +58,7 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
   ],
 
 ```
+
 
 
 ```
@@ -135,13 +146,14 @@ vns-masakinihirota-custom-instructions
 プロンプトファイル(=実装用のファイル)の場所を指定します。
 プロンプトファイルは、GitHub Copilotが実装を行うための具体的な指示を記載するファイルです。
 
-## task-list.md
+## TASK_LIST.md
 タスクリストを管理するためのファイルです。
 タスクの状態を管理するために、以下のフォルダを作成しています。
-- `todo/`: 未着手のタスクを格納します。
-- `doing/`: 現在作業中のタスクを格納します。
-- `done/`: 完了したタスクを格納します。
-- `archived/`: 完了後、一定期間経過したタスクを保管します.
+- `1_todo/`: 未着手のタスクを格納します。タスクリストから新しいタスクをプロンプトファイルにしたものを配置します。
+- `2_doing/`: 現在作業中のタスクを格納します。GitHub Copilotに読み込ませるプロンプトファイルを配置します。
+- `3_done/`: 完了したタスクを格納します。
+- `4_archived/`: 完了後、一定期間経過したタスクを保管します。
+
 # README.md
 
 ---
