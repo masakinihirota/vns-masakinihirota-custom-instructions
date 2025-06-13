@@ -11,8 +11,8 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 ## 1. 指示書の種類と優先順位
 
-1. **タスクファイル**（`tasks/doing/`内）
-2. **個別指示書**（`.github/`内）
+1. **タスクファイル**（`_tasks/doing/`内のプロンプトファイル）
+2. **個別指示書**（`.github/`内の `*-instructions.md`ファイル）
 3. **全体指示書**（本ファイル）
 
 > タスクファイルが最優先。足りない場合は個別指示書、さらに全体指示書の順で参照してください。
@@ -31,7 +31,7 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 - 設計書: `vns-masakinihirota-design/`
 - タスクリスト: `TASK_LIST.md`
-- タスク詳細: `tasks/`配下
+- タスク詳細: `_tasks/`配下
 - 用語集: `vns-masakinihirota-doc/用語.md`
 
 ---
@@ -39,8 +39,8 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 ## 4. 開発フロー
 
 1. **設計書作成**: `vns-masakinihirota-design`で全体構想・設計を作成
-2. **タスク分解**: 設計内容をタスク化し`tasks/todo/`に登録
-3. **タスク進行**: `tasks/doing/`へ移動し、`TASK_LIST.md`を更新
+2. **タスク分解**: 設計内容をタスク化し`_tasks/todo/`に登録
+3. **タスク進行**: `_tasks/doing/`へ移動し、`TASK_LIST.md`を更新
 4. **コード生成**: タスクファイルを元にGitHub Copilotでコード生成
 5. **コードレビュー**: レビュー・修正
 6. **テスト**: ユニット・統合・E2Eテスト
@@ -53,7 +53,7 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 ## 5. タスク管理ルール
 
-- 新規タスクは`tasks/todo/`に作成し、進行時は`doing/`、完了時は`done/`、古いものは`archived/`へ
+- 新規タスクは`_tasks/todo/`に作成し、進行時は`doing/`、完了時は`done/`、古いものは`archived/`へ
 - ファイル名は`YYYYMMDD-タスクID-タスク名-種類.prompt.md`形式
 - タスク移動時は`TASK_LIST.md`のリンクも必ず更新
 - 必要に応じて`blocked/`や`waiting_for_review/`も利用
@@ -72,10 +72,21 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 ## 7. 使用ツール
 
 - MCP（Model Context Protocol）
-  - Context7
-  - Figma MCP
-  - Supabase MCP
-  - GitHub MCP
+
+"playwright"
+"mcp-installer"
+"Framelink Figma MCP"
+"fetch"
+"supabase"
+"Postgres(LOCAL-supabase)"
+"sequential-thinking"
+"server-postgres"
+"context7"
+"file-system"
+"mcp-server-time"
+"@buger/docs-mcp"
+"@smithery-ai/fetch"
+
 
 ---
 
