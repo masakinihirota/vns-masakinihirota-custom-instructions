@@ -1,6 +1,18 @@
 Customize chat responses in VS Code
 https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental
 
+## 指示書を作る上で一番大切なこと
+
+それは、メンテナンスを継続することです。
+
+AIモデルの進化
+テクニックの発展
+
+これらにより指示する方法が色々と変わってきます。
+指示書を作成したら、定期的に見直しを行い、更新を行うことが重要です。
+
+
+
 ## ワークスペース
 
 プロジェクト全体のリポジトリを管理します。
