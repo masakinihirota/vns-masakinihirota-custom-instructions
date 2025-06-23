@@ -112,4 +112,8 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 ---
 
-（最終更新: 2025-05-12）
+## 11. デザインルール
+
+UIなどを作る時は、
+`.copilot-design-system-instructions.md`
+を読み込んでデザインのルールを統一してください。
