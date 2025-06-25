@@ -1,0 +1,3 @@
+[alias]
+    wb = "!f() { BRANCH_NAME=${1}; WORKTREE_PATH=../$(basename $(pwd))-${BRANCH_NAME//\\//-}; git worktree add $WORKTREE_PATH -b $BRANCH_NAME; }; f"
+    wd = "!f() { if [ \"$1\" ]; then git worktree remove \"$1\"; else echo 'Usage: git wd <worktree-path>'; git worktree list; fi; }; f"
