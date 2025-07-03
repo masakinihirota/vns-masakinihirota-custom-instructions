@@ -55,16 +55,26 @@ applyTo: "**"
 ## 4. 指示書の利用方法
 
 ### 4.1. コード生成時
-- 必要に応じて、`copilot-codeGeneration-instructions.md`を読み込み、コード生成のルールを適用します。
+- 必要に応じて、`.copilot-codeGeneration-instructions.md`を読み込み、コード生成のルールを適用します。
 
 ### 4.2. 命名規則の適用
-- 変数名や関数名を生成する際は、`copilot-namingConventions-instructions.md`を参照して命名規則を遵守します。
+- 変数名や関数名を生成する際は、`.copilot-namingConventions-instructions.md`を参照して命名規則を遵守します。
 
 ### 4.3. デザインルールの適用
-- UIコンポーネントを設計する際は、`copilot-design-system-instructions.md`を参照してデザインルールを統一します。
+- UIコンポーネントを設計する際は、`.copilot-design-system-instructions.md`を参照してデザインルールを統一します。
 
 ### 4.4. テストの実施
-- テストコードを生成する際は、`copilot-testing-instructions.md`を参照してテスト基準を満たすコードを生成します。
+- テストコードを生成する際は、`.copilot-testing-instructions.md`を参照してテスト基準を満たすコードを生成します。
+
+### 4.5. コンテキストの適用
+- 特定のコンテキストに基づいた指示が必要な場合は、`.context7-instructions.md`を参照して適切なコンテキストを適用します。
+- `.copilot-conform-instructions.md`を参照して、コンフォーマンスに関する指示を適用します。
+- `.copilot-task-instructions.md`を参照して、タスクに関する指示を適用します。
+- `.figma-instructions.md`を参照して、Figmaに関する指示を適用します。
+
+### 4.6. Supabaseの指示書
+- `.github/supabase/.supabase-instructions.md`を参照して、Supabaseに関する指示を適用します。
+
 
 ---
 
@@ -112,8 +122,3 @@ applyTo: "**"
 
 ---
 
-## 11. デザインルール
-
-UIなどを作る時は、
-`.copilot-design-system-instructions.md`
-を読み込んでデザインのルールを統一してください。
