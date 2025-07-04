@@ -19,20 +19,25 @@ applyTo: "**"
 `.github`以下には以下の種類の指示書が含まれます：
 
 1. **コード生成指示書**
-   - ファイル名例: `copilot-codeGeneration-instructions.md`
+   - ファイル名: `.copilot-codeGeneration-instructions.md`
    - コード生成時のルールや規約を定義します。
 
 2. **命名規則指示書**
-   - ファイル名例: `copilot-namingConventions-instructions.md`
+   - ファイル名: `.copilot-namingConventions-instructions.md`
    - 変数名や関数名、ファイル名の命名規則を定義します。
 
 3. **デザイン指示書**
-   - ファイル名例: `copilot-design-system-instructions.md`
+   - ファイル名: `.copilot-design-system-instructions.md`
    - UIコンポーネントのデザインルールを定義します。
 
 4. **テスト指示書**
-   - ファイル名例: `copilot-testing-instructions.md`
+   - ファイル名: `.copilot-testing-instructions.md`
    - テストの実施方法や基準を定義します。
+
+5. **supabase指示書**
+   - ファイル名: `vns-masakinihirota-custom-instructions\.github\supabase\.supabase-instructions.md`
+   - Supabaseに関する操作や設定方法を定義します。
+
 
 ---
 
