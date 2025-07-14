@@ -55,7 +55,7 @@ Next.jsなどのWeb開発において、大きな枠（「**大きな石**（大
 
 * 機能をコンポーネント単位の分割
 * 各ページやコンポーネントの入出力（Props、データ型）の定義
-* APIエンドポイントやServer Actionsの型定義
+* Server Actionsの型定義
 * バリデーションルールの定義
 * テストコードの記述（ユニットテスト、結合テスト）
 
@@ -149,9 +149,9 @@ Supabaseから取得するデータの型もここで定義します。
 
 **例:** `interface Product { id: string; name: string; description: string; price: number; imageUrl: string; }`
 
-### APIエンドポイント/Server Actionsの型定義
+### Server Actionsの型定義
 
-もしAPIエンドポイントやServer Actionsを使用する場合、それらが受け取るリクエストの型と、返すレスポンスの型を定義します。
+もしServer Actionsを使用する場合、それらが受け取るリクエストの型と、返すレスポンスの型を定義します。
 実際のデータ処理ロジックはまだ実装しません。
 
 ---

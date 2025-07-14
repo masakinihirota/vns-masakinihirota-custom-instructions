@@ -162,7 +162,7 @@ applyTo: "**"
 
 
 
-## 
+##
 
 
 
@@ -203,13 +203,13 @@ applyTo: "**"
 
 
 
-## 
+##
 
 
 
 
 
-## 
+##
 
 
 
@@ -276,37 +276,6 @@ description: '新しいReactフォームコンポーネントを生成します'
 
 
 
-----------------------------------------
-
-# サンプル2
-
-```
-
----
-mode: 'edit'
-description: 'Perform a REST API security review'
----
-Perform a REST API security review:
-
-* Ensure all endpoints are protected by authentication and authorization
-* Validate all user inputs and sanitize data
-* Implement rate limiting and throttling
-* Implement logging and monitoring for security events
-
-```
-
-
-
-## 
-
-
-
-
-
-## 
-
-
-
 
 
 ----------------------------------------
@@ -328,7 +297,6 @@ Perform a REST API security review:
 │       ├── create-react-form.prompt.md  <-- 例: Reactフォーム生成用のプロンプトファイル。
 │       └── [目的].prompt.md       <-- 例: 特定の目的のためのプロンプトファイル。
 │                                    └> 同じフォルダ内の他の `.prompt.md` や `.instructions.md` をMarkdownリンクで参照可能 。
-│                                    └> API仕様書など、他のコンテキストファイルも参照可能。
 └── .vscode/                    <-- VS Code 設定フォルダ (一般的な場所)
     └── settings.json           <-- VS Code の設定ファイル。
                                     └> ここで直接カスタム命令を記述するか、
@@ -342,33 +310,13 @@ Perform a REST API security review:
 
 
 
-## 
+##
 
 
 
 
 
-## 
-
-
-
-
-
-----------------------------------------
-
-# 
-
-
-
-
-
-## 
-
-
-
-
-
-## 
+##
 
 
 
@@ -376,39 +324,19 @@ Perform a REST API security review:
 
 ----------------------------------------
 
-# 
+#
 
 
 
 
 
-## 
+##
 
 
 
 
 
-## 
-
-
-
-
-
-----------------------------------------
-
-# 
-
-
-
-
-
-## 
-
-
-
-
-
-## 
+##
 
 
 
@@ -416,19 +344,19 @@ Perform a REST API security review:
 
 ----------------------------------------
 
-# 
+#
 
 
 
 
 
-## 
+##
 
 
 
 
 
-## 
+##
 
 
 
@@ -436,19 +364,59 @@ Perform a REST API security review:
 
 ----------------------------------------
 
-# 
+#
 
 
 
 
 
-## 
+##
 
 
 
 
 
-## 
+##
+
+
+
+
+
+----------------------------------------
+
+#
+
+
+
+
+
+##
+
+
+
+
+
+##
+
+
+
+
+
+----------------------------------------
+
+#
+
+
+
+
+
+##
+
+
+
+
+
+##
 
 
 
