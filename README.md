@@ -181,7 +181,7 @@ vns-masakinihirota-custom-instructions
 プロンプトファイル(=実装用のファイル)の場所を指定します。
 プロンプトファイルは、GitHub Copilotが実装を行うための具体的な指示を記載するファイルです。
 
-## TASK_LIST.md
+## tasks.md
 タスクリストを管理するためのファイルです。
 タスクの状態を管理するために、以下のフォルダを作成しています。
 - `1_todo/`: 未着手のタスクを格納します。タスクリストから新しいタスクをプロンプトファイルにしたものを配置します。
@@ -227,7 +227,7 @@ vns-masakinihirota-custom-instructions
 │   └── todo
 ├── copilot-instructions.md
 ├── README.md
-└── TASK_LIST.md
+└── tasks.md
 ```
 
 ---
@@ -241,7 +241,7 @@ vns-masakinihirota-custom-instructions
   - `done/`: 完了したタスクを格納します。
   - `archived/`: 完了後、一定期間経過したタスクを保管します。
 - `copilot-instructions.md`: GitHub Copilotへの全体的な指示書を記載します。
-- `TASK_LIST.md`: タスク全体のリストを管理します。
+- `tasks.md`: タスク全体のリストを管理します。
 
 ---
 
