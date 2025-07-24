@@ -1,11 +1,11 @@
 このファイルを参照したら、このファイル名を発言してください。
 
-VS Codeでチャット応答をカスタマイズする
+VS Code でチャット応答をカスタマイズする
 https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental
 
 # プロジェクト全体の指示書
 
-このファイルは、masakinihirota Webアプリ開発のための全体指示書です。開発方針・ルール・ワークフロー・運用方法を明確にし、誰でも迷わず開発できることを目指します。
+このファイルは、masakinihirota Web アプリ開発のための全体指示書です。開発方針・ルール・ワークフロー・運用方法を明確にし、誰でも迷わず開発できることを目指します。
 
 ---
 
@@ -30,7 +30,7 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 ## 3. 参照ファイル・用語集
 
 - 設計書: `vns-masakinihirota-design/`
-- タスクリスト: `TASK_LIST.md`
+- タスクリスト: `tasks.md`
 - タスク詳細: `_tasks/`配下
 - 用語集: `vns-masakinihirota-doc/用語.md`
 
@@ -40,14 +40,14 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 1. **設計書作成**: `vns-masakinihirota-design`で全体構想・設計を作成
 2. **タスク分解**: 設計内容をタスク化し`_tasks/todo/`に登録
-3. **タスク進行**: `_tasks/doing/`へ移動し、`TASK_LIST.md`を更新
-4. **コード生成**: タスクファイルを元にGitHub Copilotでコード生成
+3. **タスク進行**: `_tasks/doing/`へ移動し、`tasks.md`を更新
+4. **コード生成**: タスクファイルを元に GitHub Copilot でコード生成
 5. **コードレビュー**: レビュー・修正
-6. **テスト**: ユニット・統合・E2Eテスト
+6. **テスト**: ユニット・統合・E2E テスト
 7. **デプロイ**: テスト合格後に本番環境へ
 8. **フィードバック・改善**: ユーザーの声を反映し設計・タスクを更新
 
-> タスクが進まない場合や不明点は、`blocked/`や`waiting_for_review/`フォルダを活用し、必ず`TASK_LIST.md`を更新してください。
+> タスクが進まない場合や不明点は、`blocked/`や`waiting_for_review/`フォルダを活用し、必ず`tasks.md`を更新してください。
 
 ---
 
@@ -55,7 +55,7 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 - 新規タスクは`_tasks/todo/`に作成し、進行時は`doing/`、完了時は`done/`、古いものは`archived/`へ
 - ファイル名は`YYYYMMDD-タスクID-タスク名-種類.prompt.md`形式
-- タスク移動時は`TASK_LIST.md`のリンクも必ず更新
+- タスク移動時は`tasks.md`のリンクも必ず更新
 - 必要に応じて`blocked/`や`waiting_for_review/`も利用
 
 ---
@@ -64,8 +64,8 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 - **盲目的な信頼禁止**: 提案コードは必ず検証
 - **不要コードの削除**: 失敗・不要なコードは残さず削除
-- **コミット/プッシュ時の自動チェック**: huskyで`pnpm check`（コミット時）、`pnpm run build`（プッシュ時）を実行。build失敗時はpush中止
-- **セキュリティ・品質重視**: APIキーや秘密情報は環境変数で管理。エラー時は意味のあるメッセージと段階的なデバッグ手順を記載
+- **コミット/プッシュ時の自動チェック**: husky で`pnpm check`（コミット時）、`pnpm run build`（プッシュ時）を実行。build 失敗時は push 中止
+- **セキュリティ・品質重視**: API キーや秘密情報は環境変数で管理。エラー時は意味のあるメッセージと段階的なデバッグ手順を記載
 
 ---
 
@@ -87,7 +87,6 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 "@buger/docs-mcp"
 "@smithery-ai/fetch"
 
-
 ---
 
 ## 8. 指示書の運用・更新
@@ -98,7 +97,7 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 ## 9. 例外・エラー時の対応
 
-- タスクが進まない・不明点がある場合は、`blocked/`や`waiting_for_review/`に移動し、`TASK_LIST.md`に理由を明記
+- タスクが進まない・不明点がある場合は、`blocked/`や`waiting_for_review/`に移動し、`tasks.md`に理由を明記
 - 指示書や設計書に不明点がある場合は、必ずチームに相談
 
 ---
@@ -114,6 +113,6 @@ https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-e
 
 ## 11. デザインルール
 
-UIなどを作る時は、
+UI などを作る時は、
 `.copilot-design-system-instructions.md`
 を読み込んでデザインのルールを統一してください。
